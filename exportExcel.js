@@ -5,13 +5,15 @@ const XLSX = require('xlsx');
    POSTGRESQL CONNECTION (LOCAL)
 ========================= */
 const db = new Pool({
-  host: 'localhost',
-  user: 'postgres',        // change if different
-  password: 'ramsathvik',  // your postgres password
-  database: 'sweeyam',
-  port: 5432
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  database: process.env.DB_NAME,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  ssl: process.env.DB_HOST !== 'localhost'
+    ? { rejectUnauthorized: false }
+    : false
 });
-
 async function exportToExcel() {
   try {
     console.log('Connected to PostgreSQL');

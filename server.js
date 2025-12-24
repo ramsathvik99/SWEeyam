@@ -20,13 +20,18 @@ app.use(express.static(__dirname));
    POSTGRESQL CONNECTION (LOCAL)
    Works with pgAdmin
 ========================= */
+const { Pool } = require('pg');
+
 const db = new Pool({
-  host: 'localhost',
-  user: 'postgres',        // change ONLY if your pgAdmin username is different
-  password: 'ramsathvik',  // your PostgreSQL password
-  database: 'sweeyam2026',
-  port: 5432
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  database: process.env.DB_NAME,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  ssl: { rejectUnauthorized: false }
 });
+
+
 
 /* =========================
    Page Routes
