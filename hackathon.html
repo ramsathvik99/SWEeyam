@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>48-Hour Industrial Hackathon - SWEeyam 2026</title>
+    <meta name="description" content="Build production-grade solutions to real industry problems">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">
+                <i class="bi bi-code-slash me-2"></i>SWEeyam 2026
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="conference.html">Conference</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="hackathon.html">Hackathon</a></li>
+                    <li class="nav-item"><a class="nav-link" href="alumni.html">Alumni & Industry</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white px-3 ms-2" href="register.html">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section bg-primary text-white py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-3 fw-bold mb-4">48-Hour Industrial Hackathon</h1>
+                    <p class="lead fs-4">Build production-grade solutions to real industry problems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hackathon Overview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-4">Hackathon Overview</h2>
+                    <p class="lead mb-4">
+                        The SWEeyam 2026 Hackathon is a 48-hour intensive engineering challenge where teams build 
+                        production-grade solutions to real industry problems. This is not a race to build the fastest 
+                        prototype—it's an opportunity to demonstrate engineering excellence through code quality, system 
+                        design, security practices, and long-term maintainability.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hackathon Structure -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center mb-5">Hackathon Structure</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="h4 fw-bold mb-3">Kickoff and Team Formation</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Teams receive problem statements and evaluation criteria</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Briefing sessions explain expectations and available resources</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Mentor introductions and clinic scheduling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="h4 fw-bold mb-3">48-Hour Development Period</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Teams work on solutions with access to mentor clinics</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Rolling evaluations provide continuous improvement opportunities</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Teams submit incremental progress updates for technical review</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="h4 fw-bold mb-3">Final Evaluation</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Teams present solutions to panels of judges</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Presentations focus on technical implementation</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Judges evaluate solutions against production engineering criteria</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Winners announced at the awards ceremony</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evaluation Criteria -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center mb-5">Evaluation Criteria</h2>
+            <p class="text-center lead mb-5">
+                Emphasizing engineering rigor, teams are evaluated on production engineering standards 
+                that reflect professional development environments.
+            </p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 track-card shadow-sm">
+                        <div class="card-body">
+                            <h4 class="fw-bold mb-3">Code Quality</h4>
+                            <p class="text-muted">Clean, maintainable, and well-documented code with adherence to coding standards and best practices.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 track-card shadow-sm">
+                        <div class="card-body">
+                            <h4 class="fw-bold mb-3">System Architecture</h4>
+                            <p class="text-muted">Thoughtful design decisions with clear rationale, scalability and performance considerations, and modularity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 track-card shadow-sm">
+                        <div class="card-body">
+                            <h4 class="fw-bold mb-3">Security Practices</h4>
+                            <p class="text-muted">Implementation of security best practices, threat modeling, risk assessment, and secure coding standards.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 track-card shadow-sm">
+                        <div class="card-body">
+                            <h4 class="fw-bold mb-3">Testing and Reliability</h4>
+                            <p class="text-muted">Comprehensive test coverage, testing strategies for edge cases and failure modes, and reliability considerations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 track-card shadow-sm">
+                        <div class="card-body">
+                            <h4 class="fw-bold mb-3">Documentation</h4>
+                            <p class="text-muted">Clear documentation for setup, deployment, and maintenance, including architecture decision records and user guides.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 track-card shadow-sm">
+                        <div class="card-body">
+                            <h4 class="fw-bold mb-3">Innovation and Problem-Solving</h4>
+                            <p class="text-muted">Creative solutions to complex challenges, effective use of technologies, and real-world applicability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering Expectations -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-4">Engineering Expectations</h2>
+                    <p class="lead mb-4">
+                        Teams should approach the hackathon as if building a production system that will be maintained 
+                        long-term. While the 48-hour timeframe requires focused execution, solutions should demonstrate:
+                    </p>
+                    <ul class="list-unstyled lead">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Production-ready code that follows industry best practices</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Thoughtful architecture that considers scalability and maintainability</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Security considerations integrated from the start</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Comprehensive testing strategies</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Documentation sufficient for onboarding new developers</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill me-2"></i>Clear deployment and operational procedures</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Track-Specific Descriptions -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center mb-5">Engineering Challenge Tracks</h2>
+            
+            <!-- Cyber Security Track -->
+            <div class="card shadow-lg mb-4">
+                <div class="card-body p-5">
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="bi bi-shield-lock-fill text-primary" style="font-size: 3rem;"></i>
+                        <h3 class="h2 fw-bold ms-3 mb-0">Cyber Security Track</h3>
+                    </div>
+                    <p class="lead mb-4"><strong>Challenge Focus:</strong> Build secure applications, systems, or tools that address real-world security challenges.</p>
+                    
+                    <h5 class="fw-bold mb-3">Example Problem Statements</h5>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Develop a secure identity and access management system with multi-factor authentication</li>
+                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Build a security automation platform that integrates threat detection and response</li>
+                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Create a cryptography library with secure key management and compliance features</li>
+                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Design an intrusion detection system for network monitoring and threat mitigation</li>
+                    </ul>
+
+                    <h5 class="fw-bold mb-3">What Judges Seek</h5>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Evidence of threat modeling and security risk assessment</li>
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Implementation of security best practices (OWASP Top 10, secure coding standards)</li>
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Comprehensive security testing and vulnerability remediation</li>
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Clear documentation of security considerations and limitations</li>
+                    </ul>
+
+                    <div class="bg-light p-4 rounded">
+                        <h5 class="fw-bold mb-3">Winning Solutions Will</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>Demonstrate deep understanding of security principles, not just functional implementations</li>
+                            <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>Show evidence of security testing, including penetration testing or vulnerability scanning</li>
+                            <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>Include clear documentation of security assumptions and threat models</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI/ML Robustness Arena -->
+            <div class="card shadow-lg mb-4">
+                <div class="card-body p-5">
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="bi bi-cpu-fill text-primary" style="font-size: 3rem;"></i>
+                        <h3 class="h2 fw-bold ms-3 mb-0">AI/ML Robustness Arena</h3>
+                    </div>
+                    <p class="lead mb-4"><strong>Challenge Focus:</strong> Build production ML systems that are reliable, explainable, and robust.</p>
+                    
+                    <h5 class="fw-bold mb-3">Example Problem Statements</h5>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Deploy a production ML model serving system with monitoring and reliability features</li>
+                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Build an ML model explainability platform with fairness and bias detection</li>
+                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Create an adversarial defense system for ML model robustness</li>
+                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Design an MLOps pipeline with model versioning, A/B testing, and rollback capabilities</li>
+                    </ul>
+
+                    <h5 class="fw-bold mb-3">Focus Areas</h5>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i><strong>Model Attacks/Defenses:</strong> Adversarial robustness and defense mechanisms</li>
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i><strong>Evaluation Metrics:</strong> Comprehensive metrics benchmarked against industry standards</li>
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i><strong>Reproducibility:</strong> Reproducible experiments with clear documentation</li>
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i><strong>MLOps Pipelines:</strong> Scalable and reliable deployment infrastructure</li>
+                    </ul>
+
+                    <h5 class="fw-bold mb-3">What Judges Seek</h5>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Model performance metrics benchmarked against industry standards</li>
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Robustness testing strategies (adversarial examples, data drift detection)</li>
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Explainability and interpretability mechanisms</li>
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Scalable and reliable deployment infrastructure</li>
+                    </ul>
+
+                    <div class="bg-light p-4 rounded">
+                        <h5 class="fw-bold mb-3">Winning Solutions Will</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>Treat ML models as production systems, not research prototypes</li>
+                            <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>Demonstrate understanding of ML reliability challenges and mitigation strategies</li>
+                            <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>Include comprehensive testing for model robustness and edge cases</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Freestyle/Open Innovation Track -->
+            <div class="card shadow-lg mb-4">
+                <div class="card-body p-5">
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="bi bi-lightbulb-fill text-primary" style="font-size: 3rem;"></i>
+                        <h3 class="h2 fw-bold ms-3 mb-0">Freestyle/Open Innovation</h3>
+                    </div>
+                    <p class="lead mb-4">
+                        <strong>Challenge Focus:</strong> Cross-domain product builds with clear user value and feasibility. 
+                        Solve real-world problems through innovative solutions.
+                    </p>
+                    
+                    <h5 class="fw-bold mb-3">Example Problem Statements</h5>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Build a developer productivity tool that improves engineering workflows</li>
+                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Create a sustainability application that addresses environmental challenges</li>
+                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Design an integration platform connecting disparate systems or services</li>
+                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Develop an open-source infrastructure tool that solves common engineering problems</li>
+                    </ul>
+
+                    <h5 class="fw-bold mb-3">Key Evaluation Criteria</h5>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i><strong>Clear User Value:</strong> Demonstrable value proposition for end users</li>
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i><strong>Feasibility:</strong> Realistic implementation with clear technical approach</li>
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i><strong>Technical Innovation:</strong> Creative solutions combined with practical engineering</li>
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i><strong>Production-Ready Quality:</strong> Code quality and engineering best practices</li>
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i><strong>Cross-Domain Integration:</strong> Effective combination of multiple technical domains</li>
+                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i><strong>Long-Term Impact:</strong> Potential for open-source adoption or commercial deployment</li>
+                    </ul>
+
+                    <div class="bg-light p-4 rounded">
+                        <h5 class="fw-bold mb-3">Winning Solutions Will</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>Solve real problems with production-grade engineering, not just creative ideas</li>
+                            <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>Demonstrate clear user value and market applicability</li>
+                            <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>Show potential for long-term sustainability through open-source contribution or commercial viability</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources and Support -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center mb-5">Resources and Support</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="fw-bold mb-3">Technical Resources</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Cloud computing credits and infrastructure access</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Development tools and software licenses</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>API access and third-party service integrations</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Documentation and reference materials</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="fw-bold mb-3">Mentor Clinics</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Scheduled sessions with industry engineers, alumni, and faculty advisors</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Architecture reviews and code quality feedback</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Security and best practices guidance</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Problem-solving support and technical troubleshooting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Judging Process -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold text-center mb-5">Judging Process</h2>
+                    
+                    <div class="mb-5">
+                        <h3 class="h4 fw-bold mb-3">Evaluation Timeline</h3>
+                        <ul class="list-unstyled lead">
+                            <li class="mb-2"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Rolling evaluations during the hackathon provide continuous feedback</li>
+                            <li class="mb-2"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Final submissions reviewed by judge panels</li>
+                            <li class="mb-2"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Demo presentations with Q&A sessions</li>
+                            <li class="mb-2"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Deliberation and winner selection</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="h4 fw-bold mb-3">Judge Panels</h3>
+                        <p class="lead mb-3">Each track is evaluated by a panel comprising:</p>
+                        <ul class="list-unstyled lead">
+                            <li class="mb-2"><i class="bi bi-person-check text-success me-2"></i>Industry engineers with relevant domain expertise</li>
+                            <li class="mb-2"><i class="bi bi-person-check text-success me-2"></i>Distinguished alumni with production engineering experience</li>
+                            <li class="mb-2"><i class="bi bi-person-check text-success me-2"></i>Academic experts in related fields</li>
+                            <li class="mb-2"><i class="bi bi-person-check text-success me-2"></i>Representatives from industry partners who authored problem statements</li>
+                        </ul>
+                    </div>
+
+                    <div class="card bg-primary text-white">
+                        <div class="card-body p-4">
+                            <h3 class="h4 fw-bold mb-3">Awards and Recognition</h3>
+                            <ul class="list-unstyled lead mb-0">
+                                <li class="mb-2"><i class="bi bi-trophy-fill text-warning me-2"></i>Track winners (first, second, third place)</li>
+                                <li class="mb-2"><i class="bi bi-trophy-fill text-warning me-2"></i>Special recognition awards (best code quality, most innovative, best documentation)</li>
+                                <li class="mb-2"><i class="bi bi-trophy-fill text-warning me-2"></i>Industry partner recognition and recruitment opportunities</li>
+                                <li class="mb-2"><i class="bi bi-trophy-fill text-warning me-2"></i>Open-source publication and long-term project support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3">SWEeyam 2026</h5>
+                    <p>Production Engineering, Real Challenges, Lasting Impact</p>
+                    <p class="small">Hosted by SRM University – AP<br>Amaravati, Andhra Pradesh, India</p>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="conference.html" class="text-light text-decoration-none">Conference</a></li>
+                        <li><a href="hackathon.html" class="text-light text-decoration-none">Hackathon</a></li>
+                        <li><a href="alumni.html" class="text-light text-decoration-none">Alumni & Industry</a></li>
+                        <li><a href="register.html" class="text-light text-decoration-none">Register</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-envelope me-2"></i><a href="mailto:info@sweeyam2026.edu" class="text-light text-decoration-none">info@sweeyam2026.edu</a></li>
+                        <li><i class="bi bi-envelope me-2"></i><a href="mailto:alumni@sweeyam2026.edu" class="text-light text-decoration-none">alumni@sweeyam2026.edu</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2026 SWEeyam. All rights reserved. SRM University – AP</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
