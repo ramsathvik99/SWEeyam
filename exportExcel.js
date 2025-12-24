@@ -1,42 +1,48 @@
-const mysql = require('mysql2');
+const { Pool } = require('pg');
 const XLSX = require('xlsx');
 
-// SAME DB CONFIG AS server.js
-const db = mysql.createConnection({
+/* =========================
+   POSTGRESQL CONNECTION (LOCAL)
+========================= */
+const db = new Pool({
   host: 'localhost',
-  user: 'root',
-  password: 'ramsathvik',
-  database: 'sweeyam2026'
+  user: 'postgres',        // change if different
+  password: 'ramsathvik',  // your postgres password
+  database: 'sweeyam',
+  port: 5432
 });
 
-// Connect to DB
-db.connect(err => {
-  if (err) {
-    console.error('DB connection failed:', err);
-    return;
-  }
+async function exportToExcel() {
+  try {
+    console.log('Connected to PostgreSQL');
 
-  console.log('Connected to MySQL');
+    // Fetch data
+    const result = await db.query(
+      'SELECT * FROM registrations ORDER BY created_at DESC'
+    );
 
-  // Fetch data
-  db.query(
-    'SELECT * FROM registrations ORDER BY created_at DESC',
-    (err, results) => {
-      if (err) {
-        console.error('Query failed:', err);
-        return;
-      }
+    const rows = result.rows;
 
-      // Convert MySQL data → Excel
-      const worksheet = XLSX.utils.json_to_sheet(results);
-      const workbook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(workbook, worksheet, 'Registrations');
-
-      // Save Excel file
-      XLSX.writeFile(workbook, 'registrations.xlsx');
-
-      console.log('registrations.xlsx created successfully');
+    if (rows.length === 0) {
+      console.log('No registrations found');
       process.exit();
     }
-  );
-});
+
+    // Convert PostgreSQL data → Excel
+    const worksheet = XLSX.utils.json_to_sheet(rows);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Registrations');
+
+    // Save Excel file
+    XLSX.writeFile(workbook, 'registrations.xlsx');
+
+    console.log('registrations.xlsx created successfully');
+    process.exit();
+
+  } catch (err) {
+    console.error('Export failed:', err);
+    process.exit(1);
+  }
+}
+
+exportToExcel();

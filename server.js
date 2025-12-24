@@ -1,13 +1,12 @@
 const express = require('express');
-const mysql = require('mysql2/promise');
+const { Pool } = require('pg');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 const { saveRegistrationToExcel } = require('./excelHandler');
-require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
 /* =========================
    Middleware
@@ -15,22 +14,18 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// Serve static files
 app.use(express.static(__dirname));
 
 /* =========================
-   MySQL CONNECTION POOL
-   (CRITICAL FIX)
+   POSTGRESQL CONNECTION (LOCAL)
+   Works with pgAdmin
 ========================= */
-const db = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0
+const db = new Pool({
+  host: 'localhost',
+  user: 'postgres',        // change ONLY if your pgAdmin username is different
+  password: 'ramsathvik',  // your PostgreSQL password
+  database: 'sweeyam2026',
+  port: 5432
 });
 
 /* =========================
@@ -99,7 +94,7 @@ app.post('/api/register', async (req, res) => {
       yearsOfExperience || (registrationType !== 'student' ? yearOrExp : null);
 
     const finalExpertiseAreas =
-      expertiseAreas?.length > 0
+      expertiseAreas && expertiseAreas.length > 0
         ? expertiseAreas
         : expertiseAreasText
         ? [expertiseAreasText]
@@ -115,7 +110,12 @@ app.post('/api/register', async (req, res) => {
         preferred_engagement, availability, company,
         dietary_restrictions, accessibility_requirements,
         questions, how_did_you_hear, created_at
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())
+      ) VALUES (
+        $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,
+        $11,$12,$13,$14,$15,$16,$17,$18,$19,$20,
+        $21,$22,$23,$24,$25,$26,CURRENT_TIMESTAMP
+      )
+      RETURNING id
     `;
 
     const values = [
@@ -147,11 +147,11 @@ app.post('/api/register', async (req, res) => {
       howDidYouHear || null
     ];
 
-    const [result] = await db.query(sql, values);
+    const result = await db.query(sql, values);
 
     // Save to Excel (non-blocking)
     saveRegistrationToExcel({
-      id: result.insertId,
+      id: result.rows[0].id,
       fullName,
       email,
       phone,
@@ -183,19 +183,14 @@ app.post('/api/register', async (req, res) => {
     res.json({
       success: true,
       message: 'Registration submitted successfully!',
-      registrationId: result.insertId
+      registrationId: result.rows[0].id
     });
 
   } catch (err) {
     console.error('Registration error:', err);
-
-    let msg = 'Registration failed. Please try again.';
-    if (err.code === 'ER_DUP_ENTRY') msg = 'Email already registered.';
-    if (err.code === 'ER_NO_SUCH_TABLE') msg = 'Database table missing.';
-
     res.status(500).json({
       success: false,
-      message: msg
+      message: 'Registration failed. Please try again.'
     });
   }
 });
@@ -205,12 +200,12 @@ app.post('/api/register', async (req, res) => {
 ========================= */
 app.get('/api/stats', async (req, res) => {
   try {
-    const [rows] = await db.query(`
+    const result = await db.query(`
       SELECT registration_type, COUNT(*) AS count
       FROM registrations
       GROUP BY registration_type
     `);
-    res.json(rows);
+    res.json(result.rows);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -220,5 +215,5 @@ app.get('/api/stats', async (req, res) => {
    START SERVER
 ========================= */
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running at http://localhost:${PORT}`);
 });
